@@ -19,13 +19,23 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Cashy"),
-          backgroundColor: Colors.red,
-          actions: <Widget>[
-            IconButton(onPressed: (){}, icon: Icon(Icons.mail))
-          ],
+          backgroundColor: Colors.red
         ),
         body: SafeArea(
-          child: Text("Hello World"),
+          child: Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10.0,bottom: 0),
+            color: Colors.blueAccent,
+            child: Column(
+              children: <Widget>[
+                Image(
+                  image: AssetImage('assets/images/ic_payment.jpg'),
+                ),
+                Text("Rich Together"),
+                Text("Save your money little bit")
+              ],
+            ),
+          )
         ),
       ),
     );

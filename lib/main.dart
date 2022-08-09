@@ -33,7 +33,10 @@ class MyApp extends StatelessWidget {
                   image: AssetImage('assets/images/ic_payment.jpg'),
                 ),
                 Text("Rich Together", style: mainHeader),
-                Text("Save your money little bit",style: subHeader,)
+                Text("Save your money little bit and we \nwill help to be rich" ,
+                  style: subHeader,
+                  textAlign: TextAlign.center,
+                )
               ],
             ),
           )

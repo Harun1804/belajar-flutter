@@ -1,22 +1,22 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:nativewrappers/_internal/vm/lib/internal_patch.dart';
 import 'package:http/http.dart' as http;
 import '../model/blog.dart';
 
 class Repository {
-  final baseUrl = 'http://192.168.88.252:8080/api';
+  final baseUrl = 'http://192.168.1.202:8080/api';
 
   //get data with metode async
   Future<Map<String, dynamic>> fetchBlogs(int page) async {
     final response = await http.get(Uri.parse('$baseUrl/blog?page=$page'));
-
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
-      List<Blog> posts = (data['data']['data'] as List)
+      List<Blog> blogs = (data['data']['data'] as List)
           .map((postJson) => Blog.fromJson(postJson))
           .toList();
       return {
-        'posts': posts,
+        'blogs': blogs,
         'nextPageUrl': data['data']['next_page_url'],
       };
     } else {

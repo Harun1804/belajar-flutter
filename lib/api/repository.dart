@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../model/blog.dart';
 
 class Repository {
-  final baseUrl = 'http://192.168.1.202:8080/api';
+  final baseUrl = 'http://192.168.88.252:8000/api';
 
   //get data with metode async
   Future<Map<String, dynamic>> fetchBlogs(int page) async {
